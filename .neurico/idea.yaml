@@ -1,0 +1,55 @@
+idea:
+  title: Predicting Prompt Engineering Failure Modes via Attention Circuit Geometry
+  domain: artificial_intelligence
+  hypothesis: 'The geometric structure of attention head circuits in transformer models
+    contains predictive signatures that can identify which prompt engineering strategies
+    will produce catastrophic failures before deployment. Specifically, we hypothesize
+    that prompts causing high curvature or discontinuities in the attention pattern
+    manifold correspond to unstable regions where small perturbations lead to dramatically
+    different outputs.
+
+    '
+  background:
+    description: 'Prompt engineering failures often emerge unexpectedly in production,
+      causing safety and reliability issues. While mechanistic interpretability has
+      revealed internal model structures, connecting these structures to prompt stability
+      remains unexplored. Recent work on attention head circuits and activation geometry
+      suggests that failure modes may have detectable geometric signatures in the
+      model''s internal representations.
+
+      '
+  methodology:
+    approach: Map attention head activations to geometric manifolds and identify regions
+      of high curvature/instability, then correlate these with empirically observed
+      prompt failures across diverse strategies.
+    steps:
+    - Extract attention patterns from multiple layers for a diverse corpus of prompts
+      (successful and failed) using standard transformer models (GPT-2, BERT variants)
+    - Compute geometric properties of attention manifolds including local curvature,
+      dimensionality, and stability metrics using PCA and Riemannian geometry approximations
+    - Cluster prompts by their attention geometry signatures and test whether geometric
+      clusters predict failure modes (hallucination, refusal, inconsistency)
+    - Develop a lightweight classifier mapping attention geometry features to prompt
+      stability scores
+    - Validate predictions on held-out prompt engineering strategies and architectures
+    metrics:
+    - Classification accuracy for predicting prompt failure (precision/recall/F1)
+    - Correlation coefficient between geometric instability measures and empirical
+      failure rates
+    - 'Early detection rate: percentage of failures identified before deployment testing'
+    - False positive rate for flagging stable prompts as unstable
+  constraints:
+    compute: cpu_only
+    time_limit: 3600
+  metadata:
+    tags:
+    - mechanistic_interpretability
+    - prompt_engineering
+    - attention_mechanisms
+    - model_safety
+    - geometric_analysis
+    idea_id: predicting_prompt_engineering__20260309_225735_4a415316
+    created_at: '2026-03-09T22:57:35.707749'
+    status: submitted
+    github_repo_name: prompt-failure-prediction-0191-claude
+    github_repo_url: https://github.com/Hypogenic-AI/prompt-failure-prediction-0191-claude
