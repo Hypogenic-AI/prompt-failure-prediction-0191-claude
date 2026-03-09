@@ -1,0 +1,13 @@
+\section{Conclusion}
+\label{sec:conclusion}
+
+We investigated whether geometric properties of attention circuits can predict prompt engineering failure modes.
+By extracting 23 geometric features from the attention patterns of \gptsmall across 20 prompt formats on \ssttwo, we found that six features significantly correlate with prompt performance, with the Frobenius norm of attention matrices ($\spearman = +0.474$, permutation $p = 0.036$) and cross-layer variance ($\spearman = -0.472$) as the strongest predictors.
+These correlations are interpretable: higher attention magnitude predicts success, while inconsistent layer-wise behavior predicts failure.
+A geometry-based classifier achieves 60\% leave-one-out accuracy, outperforming both random prediction and a logit-confidence baseline that completely fails.
+
+These results provide the first empirical link between attention circuit geometry and prompt-level failure prediction, bridging mechanistic interpretability and practical prompt engineering.
+While the current predictive accuracy is modest, the complete failure of output-based confidence measures strongly motivates continued investigation of internal geometric features.
+
+Future work should scale to 100+ prompt formats using systematic format grammars \citep{sclar2023quantifying}, extend to multiple models and tasks, and explore richer geometric features such as Ollivier-Ricci curvature \citep{park2024geometry} and contrastive circuit directions \citep{suarez2026circuit}.
+Interventional experiments that modify attention geometry and measure downstream effects would establish the causal relationship between geometric instability and prompt failure.

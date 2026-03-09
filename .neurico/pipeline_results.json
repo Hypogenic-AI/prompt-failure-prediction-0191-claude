@@ -1,0 +1,27 @@
+{
+  "success": true,
+  "stages": {
+    "resource_finder": {
+      "success": true,
+      "completion_marker": "/workspaces/prompt-failure-prediction-0191-claude/.resource_finder_complete",
+      "outputs": {
+        "literature_review": "/workspaces/prompt-failure-prediction-0191-claude/literature_review.md",
+        "resources_catalog": "/workspaces/prompt-failure-prediction-0191-claude/resources.md",
+        "papers_dir": "/workspaces/prompt-failure-prediction-0191-claude/papers",
+        "datasets_dir": "/workspaces/prompt-failure-prediction-0191-claude/datasets",
+        "code_dir": "/workspaces/prompt-failure-prediction-0191-claude/code"
+      },
+      "log_file": "/workspaces/prompt-failure-prediction-0191-claude/logs/resource_finder_claude.log",
+      "transcript_file": "/workspaces/prompt-failure-prediction-0191-claude/logs/resource_finder_claude_transcript.jsonl",
+      "elapsed_time": 1399.032621383667
+    },
+    "experiment_runner": {
+      "success": true,
+      "return_code": 0,
+      "elapsed_time": 1003.6543986797333,
+      "log_file": "/workspaces/prompt-failure-prediction-0191-claude/logs/execution_claude.log",
+      "transcript_file": "/workspaces/prompt-failure-prediction-0191-claude/logs/execution_claude_transcript.jsonl"
+    }
+  },
+  "work_dir": "/workspaces/prompt-failure-prediction-0191-claude"
+}

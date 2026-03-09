@@ -1,0 +1,7 @@
+Small changes to prompt formatting can cause accuracy swings of tens of percentage points in large language models, yet no existing method connects the internal geometry of transformer attention patterns to prompt-level failure prediction.
+We propose that geometric features of attention circuits---computed from a single forward pass---can predict which prompt formulations will fail before deployment.
+We extract 23 geometric features (entropy, singular value spectra, Frobenius norms, cross-layer variance) from all 144 attention heads of \gptsmall across 20 systematically varied prompt formats on \ssttwo sentiment classification.
+We find that six geometric features significantly correlate with prompt performance (top: Frobenius norm $\spearman = +0.474$, $p = 0.035$; cross-layer variance $\spearman = -0.472$, $p = 0.036$), confirmed by a permutation test ($p = 0.036$, 5{,}000 permutations).
+The direction of these correlations is interpretable: higher attention magnitude predicts success, while inconsistent layer-wise variance predicts failure.
+A logistic regression classifier using geometric features achieves 60\% leave-one-out accuracy versus 50\% for random and 0\% for a logit-confidence baseline that completely fails.
+These results provide the first empirical evidence that attention circuit geometry contains predictive signal for prompt robustness, bridging mechanistic interpretability and practical prompt engineering.

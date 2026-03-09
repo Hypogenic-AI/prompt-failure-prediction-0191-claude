@@ -1,0 +1,461 @@
+[
+  {
+    "title": "Towards Automated Circuit Discovery for Mechanistic Interpretability",
+    "year": 2023,
+    "authors": "Arthur Conmy, Augustine N. Mavor-Parker, Aengus Lynch, Stefan Heimersheim, Adri\u00e0 Garriga-Alonso",
+    "url": "https://www.semanticscholar.org/paper/eefbd8b384a58f464827b19e30a6920ba976def9",
+    "relevance": 3,
+    "abstract": "Through considerable effort and intuition, several recent works have reverse-engineered nontrivial behaviors of transformer models. This paper systematizes the mechanistic interpretability process they followed. First, researchers choose a metric and dataset that elicit the desired model behavior. Then, they apply activation patching to find which abstract neural network units are involved in the behavior. By varying the dataset, metric, and units under investigation, researchers can understand the functionality of each component. We automate one of the process' steps: to identify the circuit that implements the specified behavior in the model's computational graph. We propose several algorithms and reproduce previous interpretability results to validate them. For example, the ACDC algorithm rediscovered 5/5 of the component types in a circuit in GPT-2 Small that computes the Greater-Than operation. ACDC selected 68 of the 32,000 edges in GPT-2 Small, all of which were manually found by previous work. Our code is available at https://github.com/ArthurConmy/Automatic-Circuit-Discovery.",
+    "citations": 494
+  },
+  {
+    "title": "Interpretability in the Wild: a Circuit for Indirect Object Identification in GPT-2 small",
+    "year": 2022,
+    "authors": "Kevin Wang, Alexandre Variengien, Arthur Conmy, Buck Shlegeris, J. Steinhardt",
+    "url": "https://www.semanticscholar.org/paper/6edd112383ad494f5f2eba72b6f4ffae122ce61f",
+    "relevance": 3,
+    "abstract": "Research in mechanistic interpretability seeks to explain behaviors of machine learning models in terms of their internal components. However, most previous work either focuses on simple behaviors in small models, or describes complicated behaviors in larger models with broad strokes. In this work, we bridge this gap by presenting an explanation for how GPT-2 small performs a natural language task called indirect object identification (IOI). Our explanation encompasses 26 attention heads grouped into 7 main classes, which we discovered using a combination of interpretability approaches relying on causal interventions. To our knowledge, this investigation is the largest end-to-end attempt at reverse-engineering a natural behavior\"in the wild\"in a language model. We evaluate the reliability of our explanation using three quantitative criteria--faithfulness, completeness and minimality. Though these criteria support our explanation, they also point to remaining gaps in our understanding. Our work provides evidence that a mechanistic understanding of large ML models is feasible, opening opportunities to scale our understanding to both larger models and more complex tasks.",
+    "citations": 854
+  },
+  {
+    "title": "How does GPT-2 compute greater-than?: Interpreting mathematical abilities in a pre-trained language model",
+    "year": 2023,
+    "authors": "Michael Hanna, Ollie Liu, Alexandre Variengien",
+    "url": "https://www.semanticscholar.org/paper/aec826ff336ca442697d5f908ab1668f1ea18987",
+    "relevance": 3,
+    "abstract": "Pre-trained language models can be surprisingly adept at tasks they were not explicitly trained on, but how they implement these capabilities is poorly understood. In this paper, we investigate the basic mathematical abilities often acquired by pre-trained language models. Concretely, we use mechanistic interpretability techniques to explain the (limited) mathematical abilities of GPT-2 small. As a case study, we examine its ability to take in sentences such as\"The war lasted from the year 1732 to the year 17\", and predict valid two-digit end years (years>32). We first identify a circuit, a small subset of GPT-2 small's computational graph that computes this task's output. Then, we explain the role of each circuit component, showing that GPT-2 small's final multi-layer perceptrons boost the probability of end years greater than the start year. Finally, we find related tasks that activate our circuit. Our results suggest that GPT-2 small computes greater-than using a complex but general mechanism that activates across diverse contexts.",
+    "citations": 192
+  },
+  {
+    "title": "In-context Learning and Induction Heads",
+    "year": 2022,
+    "authors": "Catherine Olsson, Nelson Elhage, Neel Nanda, Nicholas Joseph, Nova Dassarma, T. Henighan, Benjamin Mann, Amanda Askell, Yuntao Bai, Anna Chen, Tom Conerly, Dawn Drain, Deep Ganguli, Zac Hatfield-Dodds, Danny Hernandez, Scott Johnston, Andy Jones, John Kernion, Liane Lovitt, Kamal Ndousse, Dario Amodei, Tom B. Brown, Jack Clark, Jared Kaplan, Sam McCandlish, Chris Olah",
+    "url": "https://www.semanticscholar.org/paper/c90a99eeb57019732a6cc996bb9eaf13faedf00f",
+    "relevance": 3,
+    "abstract": "\"Induction heads\"are attention heads that implement a simple algorithm to complete token sequences like [A][B] ... [A] ->[B]. In this work, we present preliminary and indirect evidence for a hypothesis that induction heads might constitute the mechanism for the majority of all\"in-context learning\"in large transformer models (i.e. decreasing loss at increasing token indices). We find that induction heads develop at precisely the same point as a sudden sharp increase in in-context learning ability, visible as a bump in the training loss. We present six complementary lines of evidence, arguing that induction heads may be the mechanistic source of general in-context learning in transformer models of any size. For small attention-only models, we present strong, causal evidence; for larger models with MLPs, we present correlational evidence.",
+    "citations": 763
+  },
+  {
+    "title": "A Practical Review of Mechanistic Interpretability for Transformer-Based Language Models",
+    "year": 2024,
+    "authors": "Daking Rai, Yilun Zhou, Shi Feng, Abulhair Saparov, Ziyu Yao",
+    "url": "https://api.semanticscholar.org/CorpusId:270924412",
+    "relevance": 3,
+    "abstract": "Mechanistic interpretability (MI) is an emerging sub-field of interpretability that seeks to understand a neural network model by reverse-engineering its internal computations. Recently, MI has garnered significant attention for interpreting transformer-based language models (LMs), resulting in many novel insights yet introducing new challenges. However, there has not been work that comprehensively reviews these insights and challenges, particularly as a guide for newcomers to this field. To fill this gap, we provide a comprehensive survey from a task-centric perspective, organizing the taxonomy of MI research around specific research questions or tasks. We outline the fundamental objects of study in MI, along with the techniques, evaluation methods, and key findings for each task in the taxonomy. In particular, we present a task-centric taxonomy as a roadmap for beginners to navigate the field by helping them quickly identify impactful problems in which they are most interested and leverage MI for their benefit. Finally, we discuss the current gaps in the field and suggest potential future directions for MI research.",
+    "citations": 96
+  },
+  {
+    "title": "Circuit Component Reuse Across Tasks in Transformer Language Models",
+    "year": 2023,
+    "authors": "Jack Merullo, Carsten Eickhoff, Ellie Pavlick",
+    "url": "https://www.semanticscholar.org/paper/c0d9a48547d728dd320b453b01a0ab1ce2f96098",
+    "relevance": 3,
+    "abstract": "Recent work in mechanistic interpretability has shown that behaviors in language models can be successfully reverse-engineered through circuit analysis. A common criticism, however, is that each circuit is task-specific, and thus such analysis cannot contribute to understanding the models at a higher level. In this work, we present evidence that insights (both low-level findings about specific heads and higher-level findings about general algorithms) can indeed generalize across tasks. Specifically, we study the circuit discovered in Wang et al. (2022) for the Indirect Object Identification (IOI) task and 1.) show that it reproduces on a larger GPT2 model, and 2.) that it is mostly reused to solve a seemingly different task: Colored Objects (Ippolito&Callison-Burch, 2023). We provide evidence that the process underlying both tasks is functionally very similar, and contains about a 78% overlap in in-circuit attention heads. We further present a proof-of-concept intervention experiment, in which we adjust four attention heads in middle layers in order to 'repair' the Colored Objects circuit and make it behave like the IOI circuit. In doing so, we boost accuracy from 49.6% to 93.7% on the Colored Objects task and explain most sources of error. The intervention affects downstream attention heads in specific ways predicted by their interactions in the IOI circuit, indicating that this subcircuit behavior is invariant to the different task inputs. Overall, our results provide evidence that it may yet be possible to explain large language models' behavior in terms of a relatively small number of interpretable task-general algorithmic building blocks and computational components.",
+    "citations": 101
+  },
+  {
+    "title": "Successor Heads: Recurring, Interpretable Attention Heads In The Wild",
+    "year": 2023,
+    "authors": "Rhys Gould, Euan Ong, George Ogden, Arthur Conmy",
+    "url": "https://www.semanticscholar.org/paper/07c2c3b4af7e4ff1577f36f47f1c93398a6df648",
+    "relevance": 3,
+    "abstract": "In this work we present successor heads: attention heads that increment tokens with a natural ordering, such as numbers, months, and days. For example, successor heads increment 'Monday' into 'Tuesday'. We explain the successor head behavior with an approach rooted in mechanistic interpretability, the field that aims to explain how models complete tasks in human-understandable terms. Existing research in this area has found interpretable language model components in small toy models. However, results in toy models have not yet led to insights that explain the internals of frontier models and little is currently understood about the internal operations of large language models. In this paper, we analyze the behavior of successor heads in large language models (LLMs) and find that they implement abstract representations that are common to different architectures. They form in LLMs with as few as 31 million parameters, and at least as many as 12 billion parameters, such as GPT-2, Pythia, and Llama-2. We find a set of 'mod-10 features' that underlie how successor heads increment in LLMs across different architectures and sizes. We perform vector arithmetic with these features to edit head behavior and provide insights into numeric representations within LLMs. Additionally, we study the behavior of successor heads on natural language data, identifying interpretable polysemanticity in a Pythia successor head.",
+    "citations": 71
+  },
+  {
+    "title": "Identifying Semantic Induction Heads to Understand In-Context Learning",
+    "year": 2024,
+    "authors": "Jie Ren, Qipeng Guo, Hang Yan, Dongrui Liu, Xipeng Qiu, Dahua Lin",
+    "url": "https://api.semanticscholar.org/CorpusId:267759700",
+    "relevance": 3,
+    "abstract": "Although large language models (LLMs) have demonstrated remarkable performance, the lack of transparency in their inference logic raises concerns about their trustworthiness. To gain a better understanding of LLMs, we conduct a detailed analysis of the operations of attention heads and aim to better understand the in-context learning of LLMs. Specifically, we investigate whether attention heads encode two types of relationships between tokens present in natural languages: the syntactic dependency parsed from sentences and the relation within knowledge graphs. We find that certain attention heads exhibit a pattern where, when attending to head tokens, they recall tail tokens and increase the output logits of those tail tokens. More crucially, the formulation of such semantic induction heads has a close correlation with the emergence of the in-context learning ability of language models. The study of semantic attention heads advances our understanding of the intricate operations of attention heads in transformers, and further provides new insights into the in-context learning of LLMs.",
+    "citations": 53
+  },
+  {
+    "title": "LLM Circuit Analyses Are Consistent Across Training and Scale",
+    "year": 2024,
+    "authors": "Curt Tigges, Michael Hanna, Qinan Yu, Stella Biderman",
+    "url": "https://www.semanticscholar.org/paper/00c4d56adbebdb45658c27961113536afa91b138",
+    "relevance": 3,
+    "abstract": "Most currently deployed large language models (LLMs) undergo continuous training or additional finetuning. By contrast, most research into LLMs\u2019 internal mechanisms focuses on models at one snapshot in time (the end of pre-training), raising the question of whether their results generalize to real-world settings. Existing studies of mechanisms over time focus on encoder-only or toy models, which differ significantly from most deployed models. In this study, we track how model mechanisms, operationalized as circuits, emerge and evolve across 300 billion tokens of training in decoder-only LLMs, in models ranging from 70 million to 2.8 billion parameters. We find that task abilities and the functional components that support them emerge consistently at similar token counts across scale. Moreover, although such components may be implemented by different attention heads over time, the overarching algorithm that they implement remains. Surprisingly, both these algorithms and the types of components involved therein tend to replicate across model scale. Finally, we find that circuit size correlates with model size and can fluctuate considerably over time even when the same algorithm is implemented. These results suggest that circuit analyses conducted on small models at the end of pre-training can provide insights that still apply after additional training and over model scale.",
+    "citations": 43
+  },
+  {
+    "title": "Interpreting Attention Layer Outputs with Sparse Autoencoders",
+    "year": 2024,
+    "authors": "Connor Kissane, Robert Krzyzanowski, Joseph Bloom, Arthur Conmy, Neel Nanda",
+    "url": "https://www.semanticscholar.org/paper/efbe48e4c17a097f4feaec8cf9dec40218a27a87",
+    "relevance": 3,
+    "abstract": "Decomposing model activations into interpretable components is a key open problem in mechanistic interpretability. Sparse autoencoders (SAEs) are a popular method for decomposing the internal activations of trained transformers into sparse, interpretable features, and have been applied to MLP layers and the residual stream. In this work we train SAEs on attention layer outputs and show that also here SAEs find a sparse, interpretable decomposition. We demonstrate this on transformers from several model families and up to 2B parameters. We perform a qualitative study of the features computed by attention layers, and find multiple families: long-range context, short-range context and induction features. We qualitatively study the role of every head in GPT-2 Small, and estimate that at least 90% of the heads are polysemantic, i.e. have multiple unrelated roles. Further, we show that Sparse Autoencoders are a useful tool that enable researchers to explain model behavior in greater detail than prior work. For example, we explore the mystery of why models have so many seemingly redundant induction heads, use SAEs to motivate the hypothesis that some are long-prefix whereas others are short-prefix, and confirm this with more rigorous analysis. We use our SAEs to analyze the computation performed by the Indirect Object Identification circuit (Wang et al.), validating that the SAEs find causally meaningful intermediate variables, and deepening our understanding of the semantics of the circuit. We open-source the trained SAEs and a tool for exploring arbitrary prompts through the lens of Attention Output SAEs.",
+    "citations": 40
+  },
+  {
+    "title": "How to think step-by-step: A mechanistic understanding of chain-of-thought reasoning",
+    "year": 2024,
+    "authors": "Subhabrata Dutta, Joykirat Singh, Soumen Chakrabarti, Tanmoy Chakraborty",
+    "url": "https://www.semanticscholar.org/paper/97994e4526ef7eeea59190aa466fbab05fad9187",
+    "relevance": 3,
+    "abstract": "Despite superior reasoning prowess demonstrated by Large Language Models (LLMs) with Chain-of-Thought (CoT) prompting, a lack of understanding prevails around the internal mechanisms of the models that facilitate CoT generation. This work investigates the neural sub-structures within LLMs that manifest CoT reasoning from a mechanistic point of view. From an analysis of Llama-2 7B applied to multistep reasoning over fictional ontologies, we demonstrate that LLMs deploy multiple parallel pathways of answer generation for step-by-step reasoning. These parallel pathways provide sequential answers from the input question context as well as the generated CoT. We observe a functional rift in the middle layers of the LLM. Token representations in the initial half remain strongly biased towards the pretraining prior, with the in-context prior taking over in the later half. This internal phase shift manifests in different functional components: attention heads that write the answer token appear in the later half, attention heads that move information along ontological relationships appear in the initial half, and so on. To the best of our knowledge, this is the first attempt towards mechanistic investigation of CoT reasoning in LLMs.",
+    "citations": 54
+  },
+  {
+    "title": "Beyond Components: Singular Vector-Based Interpretability of Transformer Circuits",
+    "year": 2025,
+    "authors": "A. Ahmad, Abhinav Joshi, Ashutosh Modi",
+    "url": "https://api.semanticscholar.org/CorpusId:283250955",
+    "relevance": 3,
+    "abstract": "Transformer-based language models exhibit complex and distributed behavior, yet their internal computations remain poorly understood. Existing mechanistic interpretability methods typically treat attention heads and multilayer perceptron layers (MLPs) (the building blocks of a transformer architecture) as indivisible units, overlooking possibilities of functional substructure learned within them. In this work, we introduce a more fine-grained perspective that decomposes these components into orthogonal singular directions, revealing superposed and independent computations within a single head or MLP. We validate our perspective on widely used standard tasks like Indirect Object Identification (IOI), Gender Pronoun (GP), and Greater Than (GT), showing that previously identified canonical functional heads, such as the name mover, encode multiple overlapping subfunctions aligned with distinct singular directions. Nodes in a computational graph, that are previously identified as circuit elements show strong activation along specific low-rank directions, suggesting that meaningful computations reside in compact subspaces. While some directions remain challenging to interpret fully, our results highlight that transformer computations are more distributed, structured, and compositional than previously assumed. This perspective opens new avenues for fine-grained mechanistic interpretability and a deeper understanding of model internals.",
+    "citations": 3
+  },
+  {
+    "title": "Causal Head Gating: A Framework for Interpreting Roles of Attention Heads in Transformers",
+    "year": 2025,
+    "authors": "Andrew Nam, Henry Conklin, Yukang Yang, Thomas Griffiths, Jonathan Cohen, Sarah-Jane Leslie",
+    "url": "https://api.semanticscholar.org/CorpusId:278769698",
+    "relevance": 3,
+    "abstract": "We present causal head gating (CHG), a scalable method for interpreting the functional roles of attention heads in transformer models. CHG learns soft gates over heads and assigns them a causal taxonomy - facilitating, interfering, or irrelevant - based on their impact on task performance. Unlike prior approaches in mechanistic interpretability, which are hypothesis-driven and require prompt templates or target labels, CHG applies directly to any dataset using standard next-token prediction. We evaluate CHG across multiple large language models (LLMs) in the Llama 3 model family and diverse tasks, including syntax, commonsense, and mathematical reasoning, and show that CHG scores yield causal, not merely correlational, insight validated via ablation and causal mediation analyses. We also introduce contrastive CHG, a variant that isolates sub-circuits for specific task components. Our findings reveal that LLMs contain multiple sparse task-sufficient sub-circuits, that individual head roles depend on interactions with others (low modularity), and that instruction following and in-context learning rely on separable mechanisms.",
+    "citations": 4
+  },
+  {
+    "title": "Interpreting Transformers Through Attention Head Intervention",
+    "year": 2026,
+    "authors": "Mason Kadem, Rong Zheng",
+    "url": "https://api.semanticscholar.org/CorpusId:284544143",
+    "relevance": 3,
+    "abstract": "Neural networks are growing more capable on their own, but we do not understand their neural mechanisms. Understanding these mechanisms'decision-making processes, or mechanistic interpretability, enables (1) accountability and control in high-stakes domains, (2) the study of digital brains and the emergence of cognition, and (3) discovery of new knowledge when AI systems outperform humans. This paper traces how attention head intervention emerged as a key method for causal interpretability of transformers. The evolution from visualization to intervention represents a paradigm shift from observing correlations to causally validating mechanistic hypotheses through direct intervention. Head intervention studies revealed robust empirical findings while also highlighting limitations that complicate interpretation. Recent work demonstrates that mechanistic understanding now enables targeted control of model behaviour, successfully suppressing toxic outputs and manipulating semantic content through selective attention head intervention, validating the practical utility of interpretability research for AI safety.",
+    "citations": 0
+  },
+  {
+    "title": "Sparse Autoencoders Enable Scalable and Reliable Circuit Identification in Language Models",
+    "year": 2024,
+    "authors": "Charles O'Neill, Thang Bui",
+    "url": "https://www.semanticscholar.org/paper/2b4fedeae30b08552e9fd616659eb8f444136e67",
+    "relevance": 3,
+    "abstract": "This paper introduces an efficient and robust method for discovering interpretable circuits in large language models using discrete sparse autoencoders. Our approach addresses key limitations of existing techniques, namely computational complexity and sensitivity to hyperparameters. We propose training sparse autoencoders on carefully designed positive and negative examples, where the model can only correctly predict the next token for the positive examples. We hypothesise that learned representations of attention head outputs will signal when a head is engaged in specific computations. By discretising the learned representations into integer codes and measuring the overlap between codes unique to positive examples for each head, we enable direct identification of attention heads involved in circuits without the need for expensive ablations or architectural modifications. On three well-studied tasks - indirect object identification, greater-than comparisons, and docstring completion - the proposed method achieves higher precision and recall in recovering ground-truth circuits compared to state-of-the-art baselines, while reducing runtime from hours to seconds. Notably, we require only 5-10 text examples for each task to learn robust representations. Our findings highlight the promise of discrete sparse autoencoders for scalable and efficient mechanistic interpretability, offering a new direction for analysing the inner workings of large language models.",
+    "citations": 11
+  },
+  {
+    "title": "Disentangling Recall and Reasoning in Transformer Models through Layer-wise Attention and Activation Analysis",
+    "year": 2025,
+    "authors": "Harshwardhan Fartale, Ashish Kattamuri, Rahul Raja, A. Vats, Ishita Prasad, Akshata Kishore Moharir",
+    "url": "https://api.semanticscholar.org/CorpusId:281843350",
+    "relevance": 3,
+    "abstract": "Transformer-based language models excel at both recall (retrieving memorized facts) and reasoning (performing multi-step inference), but whether these abilities rely on distinct internal mechanisms remains unclear. Distinguishing recall from reasoning is crucial for predicting model generalization, designing targeted evaluations, and building safer interventions that affect one ability without disrupting the other.We approach this question through mechanistic interpretability, using controlled datasets of synthetic linguistic puzzles to probe transformer models at the layer, head, and neuron level. Our pipeline combines activation patching and structured ablations to causally measure component contributions to each task type. Across two model families (Qwen and LLaMA), we find that interventions on distinct layers and attention heads lead to selective impairments: disabling identified\"recall circuits\"reduces fact-retrieval accuracy by up to 15\\% while leaving reasoning intact, whereas disabling\"reasoning circuits\"reduces multi-step inference by a comparable margin. At the neuron level, we observe task-specific firing patterns, though these effects are less robust, consistent with neuronal polysemanticity.Our results provide the first causal evidence that recall and reasoning rely on separable but interacting circuits in transformer models. These findings advance mechanistic interpretability by linking circuit-level structure to functional specialization and demonstrate how controlled datasets and causal interventions can yield mechanistic insights into model cognition, informing safer deployment of large language models.",
+    "citations": 2
+  },
+  {
+    "title": "Towards Understanding the Nature of Attention with Low-Rank Sparse Decomposition",
+    "year": 2025,
+    "authors": "Zhengfu He, Junxuan Wang, Rui Lin, Xuyang Ge, Wentao Shu, Qiong Tang, Junping Zhang, Xipeng Qiu",
+    "url": "https://www.semanticscholar.org/paper/58d06a916d7e2ae3d6339e8966fdee3addab4f10",
+    "relevance": 3,
+    "abstract": "We propose Low-Rank Sparse Attention (Lorsa), a sparse replacement model of Transformer attention layers to disentangle original Multi Head Self Attention (MHSA) into individually comprehensible components. Lorsa is designed to address the challenge of attention superposition to understand attention-mediated interaction between features in different token positions. We show that Lorsa heads find cleaner and finer-grained versions of previously discovered MHSA behaviors like induction heads, successor heads and attention sink behavior (i.e., heavily attending to the first token). Lorsa and Sparse Autoencoder (SAE) are both sparse dictionary learning methods applied to different Transformer components, and lead to consistent findings in many ways. For instance, we discover a comprehensive family of arithmetic-specific Lorsa heads, each corresponding to an atomic operation in Llama-3.1-8B. Automated interpretability analysis indicates that Lorsa achieves parity with SAE in interpretability while Lorsa exhibits superior circuit discovery properties, especially for features computed collectively by multiple MHSA heads. We also conduct extensive experiments on architectural design ablation, Lorsa scaling law and error analysis.",
+    "citations": 2
+  },
+  {
+    "title": "Sparse Attention Post-Training for Mechanistic Interpretability",
+    "year": 2025,
+    "authors": "Florent Draye, Anson Lei, Ingmar Posner, Bernhard Sch\u00f6lkopf",
+    "url": "https://api.semanticscholar.org/CorpusId:283672562",
+    "relevance": 3,
+    "abstract": "We introduce a simple post-training method that makes transformer attention sparse without sacrificing performance. Applying a flexible sparsity regularisation under a constrained-loss objective, we show on models up to 7B parameters that it is possible to retain the original pretraining loss while reducing attention connectivity to $\\approx 0.4 \\%$ of its edges. Unlike sparse-attention methods designed for computational efficiency, our approach leverages sparsity as a structural prior: it preserves capability while exposing a more organized and interpretable connectivity pattern. We find that this local sparsity cascades into global circuit simplification: task-specific circuits involve far fewer components (attention heads and MLPs) with up to 100x fewer edges connecting them. Additionally, using cross-layer transcoders, we show that sparse attention substantially simplifies attention attribution, enabling a unified view of feature-based and circuit-based perspectives. These results demonstrate that transformer attention can be made orders of magnitude sparser, suggesting that much of its computation is redundant and that sparsity may serve as a guiding principle for more structured and interpretable models.",
+    "citations": 3
+  },
+  {
+    "title": "Mechanistic Interpretability in the Presence of Architectural Obfuscation",
+    "year": 2025,
+    "authors": "Marcos Florencio, Thomas Barton",
+    "url": "https://api.semanticscholar.org/CorpusId:279999402",
+    "relevance": 3,
+    "abstract": "Architectural obfuscation - e.g., permuting hidden-state tensors, linearly transforming embedding tables, or remapping tokens - has recently gained traction as a lightweight substitute for heavyweight cryptography in privacy-preserving large-language-model (LLM) inference. While recent work has shown that these techniques can be broken under dedicated reconstruction attacks, their impact on mechanistic interpretability has not been systematically studied. In particular, it remains unclear whether scrambling a network's internal representations truly thwarts efforts to understand how the model works, or simply relocates the same circuits to an unfamiliar coordinate system. We address this gap by analyzing a GPT-2-small model trained from scratch with a representative obfuscation map. Assuming the obfuscation map is private and the original basis is hidden (mirroring an honest-but-curious server), we apply logit-lens attribution, causal path-patching, and attention-head ablation to locate and manipulate known circuits. Our findings reveal that obfuscation dramatically alters activation patterns within attention heads yet preserves the layer-wise computational graph. This disconnect hampers reverse-engineering of user prompts: causal traces lose their alignment with baseline semantics, and token-level logit attributions become too noisy to reconstruct. At the same time, feed-forward and residual pathways remain functionally intact, suggesting that obfuscation degrades fine-grained interpretability without compromising top-level task performance. These results establish quantitative evidence that architectural obfuscation can simultaneously (i) retain global model behaviour and (ii) impede mechanistic analyses of user-specific content. By mapping where interpretability breaks down, our study provides guidance for future privacy defences and for robustness-aware interpretability tooling.",
+    "citations": 0
+  },
+  {
+    "title": "Selective induction Heads: How Transformers Select Causal Structures in Context",
+    "year": 2025,
+    "authors": "Francesco D'Angelo, Francesco Croce, Nicolas Flammarion",
+    "url": "https://api.semanticscholar.org/CorpusId:278637161",
+    "relevance": 3,
+    "abstract": "Transformers have exhibited exceptional capabilities in sequence modeling tasks, leveraging self-attention and in-context learning. Critical to this success are induction heads, attention circuits that enable copying tokens based on their previous occurrences. In this work, we introduce a novel framework that showcases transformers'ability to dynamically handle causal structures. Existing works rely on Markov Chains to study the formation of induction heads, revealing how transformers capture causal dependencies and learn transition probabilities in-context. However, they rely on a fixed causal structure that fails to capture the complexity of natural languages, where the relationship between tokens dynamically changes with context. To this end, our framework varies the causal structure through interleaved Markov chains with different lags while keeping the transition probabilities fixed. This setting unveils the formation of Selective Induction Heads, a new circuit that endows transformers with the ability to select the correct causal structure in-context. We empirically demonstrate that transformers learn this mechanism to predict the next token by identifying the correct lag and copying the corresponding token from the past. We provide a detailed construction of a 3-layer transformer to implement the selective induction head, and a theoretical analysis proving that this mechanism asymptotically converges to the maximum likelihood solution. Our findings advance the understanding of how transformers select causal structures, providing new insights into their functioning and interpretability.",
+    "citations": 7
+  },
+  {
+    "title": "Constrained belief updates explain geometric structures in transformer representations",
+    "year": 2025,
+    "authors": "Mateusz Piotrowski, P. Riechers, Daniel Filan, A. Shai",
+    "url": "https://www.semanticscholar.org/paper/decab8df62433e06a202da0d85761e78dae1d4c8",
+    "relevance": 3,
+    "abstract": "What computational structures emerge in transformers trained on next-token prediction? In this work, we provide evidence that transformers implement constrained Bayesian belief updating -- a parallelized version of partial Bayesian inference shaped by architectural constraints. We integrate the model-agnostic theory of optimal prediction with mechanistic interpretability to analyze transformers trained on a tractable family of hidden Markov models that generate rich geometric patterns in neural activations. Our primary analysis focuses on single-layer transformers, revealing how the first attention layer implements these constrained updates, with extensions to multi-layer architectures demonstrating how subsequent layers refine these representations. We find that attention carries out an algorithm with a natural interpretation in the probability simplex, and create representations with distinctive geometric structure. We show how both the algorithmic behavior and the underlying geometry of these representations can be theoretically predicted in detail -- including the attention pattern, OV-vectors, and embedding vectors -- by modifying the equations for optimal future token predictions to account for the architectural constraints of attention. Our approach provides a principled lens on how architectural constraints shape the implementation of optimal prediction, revealing why transformers develop specific intermediate geometric structures.",
+    "citations": 6
+  },
+  {
+    "title": "Talking Heads: Understanding Inter-layer Communication in Transformer Language Models",
+    "year": 2024,
+    "authors": "Jack Merullo, Carsten Eickhoff, Ellie Pavlick",
+    "url": "https://www.semanticscholar.org/paper/5062d21a91b60d432b5d1264619fa26243e0e352",
+    "relevance": 3,
+    "abstract": "Although it is known that transformer language models (LMs) pass features from early layers to later layers, it is not well understood how this information is represented and routed by the model. We analyze a mechanism used in two LMs to selectively inhibit items in a context in one task, and find that it underlies a commonly used abstraction across many context-retrieval behaviors. Specifically, we find that models write into low-rank subspaces of the residual stream to represent features which are then read out by later layers, forming low-rank communication channels (Elhage et al., 2021) between layers. A particular 3D subspace in model activations in GPT-2 can be traversed to positionally index items in lists, and we show that this mechanism can explain an otherwise arbitrary-seeming sensitivity of the model to the order of items in the prompt. That is, the model has trouble copying the correct information from context when many items ``crowd\"this limited space. By decomposing attention heads with the Singular Value Decomposition (SVD), we find that previously described interactions between heads separated by one or more layers can be predicted via analysis of their weight matrices alone. We show that it is possible to manipulate the internal model representations as well as edit model weights based on the mechanism we discover in order to significantly improve performance on our synthetic Laundry List task, which requires recall from a list, often improving task accuracy by over 20%. Our analysis reveals a surprisingly intricate interpretable structure learned from language model pretraining, and helps us understand why sophisticated LMs sometimes fail in simple domains, facilitating future analysis of more complex behaviors.",
+    "citations": 39
+  },
+  {
+    "title": "Mechanism and Emergence of Stacked Attention Heads in Multi-Layer Transformers",
+    "year": 2024,
+    "authors": "Tiberiu Musat",
+    "url": "https://www.semanticscholar.org/paper/07483a649206b02124c765d2870c44a33a25d1d4",
+    "relevance": 3,
+    "abstract": "In this paper, I introduce the retrieval problem, a simple yet common reasoning task that can be solved only by transformers with a minimum number of layers, which grows logarithmically with the input size. I empirically show that large language models can solve the task under different prompting formulations without any fine-tuning. To understand how transformers solve the retrieval problem, I train several transformers on a minimal formulation. Successful learning occurs only under the presence of an implicit curriculum. I uncover the learned mechanisms by studying the attention maps in the trained transformers. I also study the training process, uncovering that attention heads always emerge in a specific sequence guided by the implicit curriculum.",
+    "citations": 4
+  },
+  {
+    "title": "Emergence of Minimal Circuits for Indirect Object Identification in Attention-Only Transformers",
+    "year": 2025,
+    "authors": "Rabin Adhikari",
+    "url": "https://api.semanticscholar.org/CorpusId:282573839",
+    "relevance": 3,
+    "abstract": "Mechanistic interpretability aims to reverse-engineer large language models (LLMs) into human-understandable computational circuits. However, the complexity of pretrained models often obscures the minimal mechanisms required for specific reasoning tasks. In this work, we train small, attention-only transformers from scratch on a symbolic version of the Indirect Object Identification (IOI) task -- a benchmark for studying coreference -- like reasoning in transformers. Surprisingly, a single-layer model with only two attention heads achieves perfect IOI accuracy, despite lacking MLPs and normalization layers. Through residual stream decomposition, spectral analysis, and embedding interventions, we find that the two heads specialize into additive and contrastive subcircuits that jointly implement IOI resolution. Furthermore, we show that a two-layer, one-head model achieves similar performance by composing information across layers through query-value interactions. These results demonstrate that task-specific training induces highly interpretable, minimal circuits, offering a controlled testbed for probing the computational foundations of transformer reasoning.",
+    "citations": 0
+  },
+  {
+    "title": "A Review of Developmental Interpretability in Large Language Models",
+    "year": 2025,
+    "authors": "Ihor Kendiukhov",
+    "url": "https://api.semanticscholar.org/CorpusId:280708470",
+    "relevance": 3,
+    "abstract": "This review synthesizes the nascent but critical field of developmental interpretability for Large Language Models. We chart the field's evolution from static, post-hoc analysis of trained models to a dynamic investigation of the training process itself. We begin by surveying the foundational methodologies, including representational probing, causal tracing, and circuit analysis, that enable researchers to deconstruct the learning process. The core of this review examines the developmental arc of LLM capabilities, detailing key findings on the formation and composition of computational circuits, the biphasic nature of knowledge acquisition, the transient dynamics of learning strategies like in-context learning, and the phenomenon of emergent abilities as phase transitions in training. We explore illuminating parallels with human cognitive and linguistic development, which provide valuable conceptual frameworks for understanding LLM learning. Finally, we argue that this developmental perspective is not merely an academic exercise but a cornerstone of proactive AI safety, offering a pathway to predict, monitor, and align the processes by which models acquire their capabilities. We conclude by outlining the grand challenges facing the field, such as scalability and automation, and propose a research agenda for building more transparent, reliable, and beneficial AI systems.",
+    "citations": 0
+  },
+  {
+    "title": "Linking In-context Learning in Transformers to Human Episodic Memory",
+    "year": 2024,
+    "authors": "Ji-An Li, C. Zhou, M. Benna, Marcelo G. Mattar",
+    "url": "https://www.semanticscholar.org/paper/d04a7906161835440daaff90265dacca01ed3ba3",
+    "relevance": 3,
+    "abstract": "Understanding connections between artificial and biological intelligent systems can reveal fundamental principles of general intelligence. While many artificial intelligence models have a neuroscience counterpart, such connections are largely missing in Transformer models and the self-attention mechanism. Here, we examine the relationship between interacting attention heads and human episodic memory. We focus on induction heads, which contribute to in-context learning in Transformer-based large language models (LLMs). We demonstrate that induction heads are behaviorally, functionally, and mechanistically similar to the contextual maintenance and retrieval (CMR) model of human episodic memory. Our analyses of LLMs pre-trained on extensive text data show that CMR-like heads often emerge in the intermediate and late layers, qualitatively mirroring human memory biases. The ablation of CMR-like heads suggests their causal role in in-context learning. Our findings uncover a parallel between the computational mechanisms of LLMs and human memory, offering valuable insights into both research fields.",
+    "citations": 13
+  },
+  {
+    "title": "An explainable transformer circuit for compositional generalization",
+    "year": 2025,
+    "authors": "Cheng Tang, Brenden Lake, Mehrdad Jazayeri",
+    "url": "https://api.semanticscholar.org/CorpusId:276575355",
+    "relevance": 3,
+    "abstract": "Compositional generalization-the systematic combination of known components into novel structures-remains a core challenge in cognitive science and machine learning. Although transformer-based large language models can exhibit strong performance on certain compositional tasks, the underlying mechanisms driving these abilities remain opaque, calling into question their interpretability. In this work, we identify and mechanistically interpret the circuit responsible for compositional induction in a compact transformer. Using causal ablations, we validate the circuit and formalize its operation using a program-like description. We further demonstrate that this mechanistic understanding enables precise activation edits to steer the model's behavior predictably. Our findings advance the understanding of complex behaviors in transformers and highlight such insights can provide a direct pathway for model control.",
+    "citations": 6
+  },
+  {
+    "title": "Quantifying LLM Attention-Head Stability: Implications for Circuit Universality",
+    "year": 2026,
+    "authors": "Karan Bali, Jack Stanley, Praneet Suresh, Danilo Bzdok",
+    "url": "https://api.semanticscholar.org/CorpusId:285788062",
+    "relevance": 3,
+    "abstract": "In mechanistic interpretability, recent work scrutinizes transformer\"circuits\"- sparse, mono or multi layer sub computations, that may reflect human understandable functions. Yet, these network circuits are rarely acid-tested for their stability across different instances of the same deep learning architecture. Without this, it remains unclear whether reported circuits emerge universally across labs or turn out to be idiosyncratic to a particular estimation instance, potentially limiting confidence in safety-critical settings. Here, we systematically study stability across-refits in increasingly complex transformer language models of various sizes. We quantify, layer by layer, how similarly attention heads learn representations across independently initialized training runs. Our rigorous experiments show that (1) middle-layer heads are the least stable yet the most representationally distinct; (2) deeper models exhibit stronger mid-depth divergence; (3) unstable heads in deeper layers become more functionally important than their peers from the same layer; (4) applying weight decay optimization substantially improves attention-head stability across random model initializations; and (5) the residual stream is comparatively stable. Our findings establish the cross-instance robustness of circuits as an essential yet underappreciated prerequisite for scalable oversight, drawing contours around possible white-box monitorability of AI systems.",
+    "citations": 0
+  },
+  {
+    "title": "From independent patches to coordinated attention: Controlling information flow in vision transformers",
+    "year": 2026,
+    "authors": "Kieran A. Murphy",
+    "url": "https://api.semanticscholar.org/CorpusId:285285978",
+    "relevance": 3,
+    "abstract": "We make the information transmitted by attention an explicit, measurable quantity in vision transformers. By inserting variational information bottlenecks on all attention-mediated writes to the residual stream -- without other architectural changes -- we train models with an explicit information cost and obtain a controllable spectrum from independent patch processing to fully expressive global attention. On ImageNet-100, we characterize how classification behavior and information routing evolve across this spectrum, and provide initial insights into how global visual representations emerge from local patch processing by analyzing the first attention heads that transmit information. By biasing learning toward solutions with constrained internal communication, our approach yields models that are more tractable for mechanistic analysis and more amenable to control.",
+    "citations": 0
+  },
+  {
+    "title": "Dissecting Multimodal In-Context Learning: Modality Asymmetries and Circuit Dynamics in modern Transformers",
+    "year": 2026,
+    "authors": "Yiran Huang, Karsten Roth, Quentin Bouniot, Wenjia Xu, Zeynep Akata",
+    "url": "https://api.semanticscholar.org/CorpusId:285101835",
+    "relevance": 3,
+    "abstract": "Transformer-based multimodal large language models often exhibit in-context learning (ICL) abilities. Motivated by this phenomenon, we ask: how do transformers learn to associate information across modalities from in-context examples? We investigate this question through controlled experiments on small transformers trained on synthetic classification tasks, enabling precise manipulation of data statistics and model architecture. We begin by revisiting core principles of unimodal ICL in modern transformers. While several prior findings replicate, we find that Rotary Position Embeddings (RoPE) increases the data complexity threshold for ICL. Extending to the multimodal setting reveals a fundamental learning asymmetry: when pretrained on high-diversity data from a primary modality, surprisingly low data complexity in the secondary modality suffices for multimodal ICL to emerge. Mechanistic analysis shows that both settings rely on an induction-style mechanism that copies labels from matching in-context exemplars; multimodal training refines and extends these circuits across modalities. Our findings provide a mechanistic foundation for understanding multimodal ICL in modern transformers and introduce a controlled testbed for future investigation.",
+    "citations": 0
+  },
+  {
+    "title": "Finding Highly Interpretable Prompt-Specific Circuits in Language Models",
+    "year": 2026,
+    "authors": "Gabriel Franco, Lucas M. Tassis, A. Rohr, Mark Crovella",
+    "url": "https://www.semanticscholar.org/paper/7aaaf7168c72861d89392cac737a349ec0f495fb",
+    "relevance": 3,
+    "abstract": "Understanding the internal circuits that language models use to solve tasks remains a central challenge in mechanistic interpretability. Most prior work identifies circuits at the task level by averaging across many prompts, implicitly assuming a single stable mechanism per task. We show that this assumption can obscure a crucial source of structure: circuits are prompt-specific, even within a fixed task. Building on attention causal communication (ACC) (Franco&Crovella, 2025), we introduce ACC++, refinements that extract cleaner, lower-dimensional causal signals inside attention heads from a single forward pass. Like ACC, our approach does not require replacement models (e.g., SAEs) or activation patching; ACC++ further improves circuit precision by reducing attribution noise. Applying ACC++ to indirect object identification (IOI) in GPT-2, Pythia, and Gemma 2, we find there is no single circuit for IOI in any model: different prompt templates induce systematically different mechanisms. Despite this variation, prompts cluster into prompt families with similar circuits, and we propose a representative circuit for each family as a practical unit of analysis. Finally, we develop an automated interpretability pipeline that uses ACC++ signals to surface human-interpretable features and assemble mechanistic explanations for prompt families behavior. Together, our results recast circuits as a meaningful object of study by shifting the unit of analysis from tasks to prompts, enabling scalable circuit descriptions in the presence of prompt-specific mechanisms.",
+    "citations": 0
+  },
+  {
+    "title": "Circuit Fingerprints: How Answer Tokens Encode Their Geometrical Path",
+    "year": 2026,
+    "authors": "Andres Saurez, Neha Sengar, Dongsoo Har",
+    "url": "https://www.semanticscholar.org/paper/b861550c4fe3db6bf6f35f50a33ae0ef3173c265",
+    "relevance": 3,
+    "abstract": "Circuit discovery and activation steering in transformers have developed as separate research threads, yet both operate on the same representational space. Are they two views of the same underlying structure? We show they follow a single geometric principle: answer tokens, processed in isolation, encode the directions that would produce them. This Circuit Fingerprint hypothesis enables circuit discovery without gradients or causal intervention -- recovering comparable structure to gradient-based methods through geometric alignment alone. We validate this on standard benchmarks (IOI, SVA, MCQA) across four model families, achieving circuit discovery performance comparable to gradient-based methods. The same directions that identify circuit components also enable controlled steering -- achieving 69.8\\% emotion classification accuracy versus 53.1\\% for instruction prompting while preserving factual accuracy. Beyond method development, this read-write duality reveals that transformer circuits are fundamentally geometric structures: interpretability and controllability are two facets of the same object.",
+    "citations": 0
+  },
+  {
+    "title": "CircuitSeer: Mining High-Quality Data by Probing Mathematical Reasoning Circuits in LLMs",
+    "year": 2025,
+    "authors": "Shaobo Wang, Yongliang Miao, Yuan Liu, Qianli Ma, Ning Liao, Linfeng Zhang",
+    "url": "https://api.semanticscholar.org/CorpusId:282245908",
+    "relevance": 3,
+    "abstract": "Large language models (LLMs) have demonstrated impressive reasoning capabilities, but scaling their performance often relies on massive reasoning datasets that are computationally expensive to train on. Existing data selection methods aim to curate smaller, high-quality subsets but often rely on costly external models or opaque heuristics. In this work, we shift the focus from external heuristics to the model's internal mechanisms. We find that complex reasoning tasks consistently activate a sparse, specialized subset of attention heads, forming core reasoning circuits. Building on this insight, we propose CircuitSeer, a novel data selection method that quantifies the reasoning complexity of data by measuring its influence on these crucial circuits. Extensive experiments on 4 models and 9 datasets demonstrate CircuitSeer's superiority. Notably, fine-tuning Qwen2.5-Math-7B on just 10% of data selected by our method achieves a 1.4-point gain in average Pass@1 over training on the full dataset, highlighting its efficiency and effectiveness.",
+    "citations": 1
+  },
+  {
+    "title": "Even Heads Fix Odd Errors: Mechanistic Discovery and Surgical Repair in Transformer Attention",
+    "year": 2025,
+    "authors": "Gustavo Sandoval",
+    "url": "https://api.semanticscholar.org/CorpusId:280919088",
+    "relevance": 3,
+    "abstract": "We present a mechanistic case study of a format-dependent reasoning failure in Llama-3.1-8B-Instruct, where the model incorrectly judges\"9.11\"as larger than\"9.8\"in chat or Q&A formats, but answers correctly in simple format. Through systematic intervention, we discover transformers implement even/odd attention head specialization: even indexed heads handle numerical comparison, while odd heads serve incompatible functions. The bug requires exactly 8 even heads at Layer 10 for perfect repair. Any combination of 8+ even heads succeeds, while 7 or fewer completely fails, revealing sharp computational thresholds with perfect redundancy among the 16 even heads. SAE analysis reveals the mechanism: format representations separate (10% feature overlap at Layer 7), then re-entangle with different weightings (80% feature overlap at Layer 10), with specific features showing 1.5x amplification in failing formats. We achieve perfect repair using only 25% of attention heads and identify a 60% pattern replacement threshold, demonstrating that apparent full-module requirements hide sophisticated substructure with implications for interpretability and efficiency. All of our code is available at https://github.com/gussand/surgeon.",
+    "citations": 0
+  },
+  {
+    "title": "Time Course MechInterp: Analyzing the Evolution of Components and Knowledge in Large Language Models",
+    "year": 2025,
+    "authors": "Ahmad Dawar Hakimi, Ali Modarressi, Philipp Wicke, Hinrich Schutze",
+    "url": "https://www.semanticscholar.org/paper/3848f2363bb17461f700583b772eb48dd1893e85",
+    "relevance": 3,
+    "abstract": "Understanding how large language models (LLMs) acquire and store factual knowledge is crucial for enhancing their interpretability and reliability. In this work, we analyze the evolution of factual knowledge representation in the OLMo-7B model by tracking the roles of its attention heads and feed forward networks (FFNs) over the course of pre-training. We classify these components into four roles: general, entity, relation-answer, and fact-answer specific, and examine their stability and transitions. Our results show that LLMs initially depend on broad, general-purpose components, which later specialize as training progresses. Once the model reliably predicts answers, some components are repurposed, suggesting an adaptive learning process. Notably, attention heads display the highest turnover. We also present evidence that FFNs remain more stable throughout training. Furthermore, our probing experiments reveal that location-based relations converge to high accuracy earlier in training than name-based relations, highlighting how task complexity shapes acquisition dynamics. These insights offer a mechanistic view of knowledge formation in LLMs.",
+    "citations": 0
+  },
+  {
+    "title": "Identifying a Circuit for Verb Conjugation in GPT-2",
+    "year": 2025,
+    "authors": "David Demitri Africa",
+    "url": "https://www.semanticscholar.org/paper/b0b3ba49b1e9cf2f11757cba5eb074f85f1a9bc0",
+    "relevance": 3,
+    "abstract": "I implement a procedure to isolate and interpret the sub-network (or\"circuit\") responsible for subject-verb agreement in GPT-2 Small. In this study, the model is given prompts where the subject is either singular (e.g.\"Alice\") or plural (e.g.\"Alice and Bob\"), and the task is to correctly predict the appropriate verb form (\"walks\"for singular subjects,\"walk\"for plural subjects). Using a series of techniques-including performance verification automatic circuit discovery via direct path patching, and direct logit attribution- I isolate a candidate circuit that contributes significantly to the model's correct verb conjugation. The results suggest that only a small fraction of the network's component-token pairs is needed to achieve near-model performance on the base task but substantially more for more complex settings.",
+    "citations": 0
+  },
+  {
+    "title": "Interpreting Affine Recurrence Learning in GPT-style Transformers",
+    "year": 2024,
+    "authors": "Samarth Bhargav, A. Gu",
+    "url": "https://www.semanticscholar.org/paper/ec637cc983c4b6dd24bf012d7a34a69792ecab13",
+    "relevance": 3,
+    "abstract": "Understanding the internal mechanisms of GPT-style transformers, particularly their capacity to perform in-context learning (ICL), is critical for advancing AI alignment and interpretability. In-context learning allows transformers to generalize during inference without modifying their weights, yet the precise operations driving this capability remain largely opaque. This paper presents an investigation into the mechanistic interpretability of these transformers, focusing specifically on their ability to learn and predict affine recurrences as an ICL task. To address this, we trained a custom three-layer transformer to predict affine recurrences and analyzed the model's internal operations using both empirical and theoretical approaches. Our findings reveal that the model forms an initial estimate of the target sequence using a copying mechanism in the zeroth layer, which is subsequently refined through negative similarity heads in the second layer. These insights contribute to a deeper understanding of transformer behaviors in recursive tasks and offer potential avenues for improving AI alignment through mechanistic interpretability. Finally, we discuss the implications of our results for future work, including extensions to higher-dimensional recurrences and the exploration of polynomial sequences.",
+    "citations": 0
+  },
+  {
+    "title": "How do Large Language Models Learn In-Context? Query and Key Matrices of In-Context Heads are Two Towers for Metric Learning",
+    "year": 2024,
+    "authors": "Zeping Yu, Sophia Ananiadou",
+    "url": "https://api.semanticscholar.org/CorpusId:267411978",
+    "relevance": 3,
+    "abstract": "We investigate the mechanism of in-context learning (ICL) on sentence classification tasks with semantically-unrelated labels (\u201cfoo\u201d/\u201cbar\u201d). We find intervening in only 1% heads (named \u201cin-context heads\u201d) significantly affects ICL accuracy from 87.6% to 24.4%. To understand this phenomenon, we analyze the value-output vectors in these heads and discover that the vectors at each label position contain substantial information about the corresponding labels. Furthermore, we observe that the prediction shift from \u201cfoo\u201d to \u201cbar\u201d is due to the respective reduction and increase in these heads\u2019 attention scores at \u201cfoo\u201d and \u201cbar\u201d positions. Therefore, we propose a hypothesis for ICL: in in-context heads, the value-output matrices extract label features, while the query-key matrices compute the similarity between the features at the last position and those at each label position. The query and key matrices can be considered as two towers that learn the similarity metric between the last position\u2019s features and each demonstration at label positions. Using this hypothesis, we explain the majority label bias and recency bias in ICL and propose two methods to reduce these biases by 22% and 17%, respectively.",
+    "citations": 19
+  },
+  {
+    "title": "What needs to go right for an induction head? A mechanistic study of in-context learning circuits and their formation",
+    "year": 2024,
+    "authors": "Aaditya K. Singh, Ted Moskovitz, Felix Hill, S. C. Chan, Andrew M. Saxe",
+    "url": "https://www.semanticscholar.org/paper/63a87feede94433b44b2c2b194e5902c3c5158f2",
+    "relevance": 3,
+    "abstract": "In-context learning is a powerful emergent ability in transformer models. Prior work in mechanistic interpretability has identified a circuit element that may be critical for in-context learning -- the induction head (IH), which performs a match-and-copy operation. During training of large transformers on natural language data, IHs emerge around the same time as a notable phase change in the loss. Despite the robust evidence for IHs and this interesting coincidence with the phase change, relatively little is known about the diversity and emergence dynamics of IHs. Why is there more than one IH, and how are they dependent on each other? Why do IHs appear all of a sudden, and what are the subcircuits that enable them to emerge? We answer these questions by studying IH emergence dynamics in a controlled setting by training on synthetic data. In doing so, we develop and share a novel optogenetics-inspired causal framework for modifying activations throughout training. Using this framework, we delineate the diverse and additive nature of IHs. By clamping subsets of activations throughout training, we then identify three underlying subcircuits that interact to drive IH formation, yielding the phase change. Furthermore, these subcircuits shed light on data-dependent properties of formation, such as phase change timing, already showing the promise of this more in-depth understanding of subcircuits that need to\"go right\"for an induction head.",
+    "citations": 66
+  },
+  {
+    "title": "How does GPT-2 Predict Acronyms? Extracting and Understanding a Circuit via Mechanistic Interpretability",
+    "year": 2024,
+    "authors": "Jorge Garc'ia-Carrasco, Alejandro Mat'e, Juan Trujillo",
+    "url": "https://api.semanticscholar.org/CorpusId:269614509",
+    "relevance": 3,
+    "abstract": "Transformer-based language models are treated as black-boxes because of their large number of parameters and complex internal interactions, which is a serious safety concern. Mechanistic Interpretability (MI) intends to reverse-engineer neural network behaviors in terms of human-understandable components. In this work, we focus on understanding how GPT-2 Small performs the task of predicting three-letter acronyms. Previous works in the MI field have focused so far on tasks that predict a single token. To the best of our knowledge, this is the first work that tries to mechanistically understand a behavior involving the prediction of multiple consecutive tokens. We discover that the prediction is performed by a circuit composed of 8 attention heads (~5% of the total heads) which we classified in three groups according to their role. We also demonstrate that these heads concentrate the acronym prediction functionality. In addition, we mechanistically interpret the most relevant heads of the circuit and find out that they use positional information which is propagated via the causal mask mechanism. We expect this work to lay the foundation for understanding more complex behaviors involving multiple-token predictions.",
+    "citations": 13
+  },
+  {
+    "title": "Retrieval Heads are Dynamic",
+    "year": 2026,
+    "authors": "Yuping Lin, Zitao Li, Yue Xing, Pengfei He, Yin Cui, Yaliang Li, Bolin Ding, Jingren Zhou, Jiliang Tang",
+    "url": "https://www.semanticscholar.org/paper/16f2e69333935e0332f0b61d6013cf72d57f0026",
+    "relevance": 3,
+    "abstract": "Recent studies have identified\"retrieval heads\"in Large Language Models (LLMs) responsible for extracting information from input contexts. However, prior works largely rely on static statistics aggregated across datasets, identifying heads that perform retrieval on average. This perspective overlooks the fine-grained temporal dynamics of autoregressive generation. In this paper, we investigate retrieval heads from a dynamic perspective. Through extensive analysis, we establish three core claims: (1) Dynamism: Retrieval heads vary dynamically across timesteps; (2) Irreplaceability: Dynamic retrieval heads are specific at each timestep and cannot be effectively replaced by static retrieval heads; and (3) Correlation: The model's hidden state encodes a predictive signal for future retrieval head patterns, indicating an internal planning mechanism. We validate these findings on the Needle-in-a-Haystack task and a multi-hop QA task, and quantify the differences on the utility of dynamic and static retrieval heads in a Dynamic Retrieval-Augmented Generation framework. Our study provides new insights into the internal mechanisms of LLMs.",
+    "citations": 0
+  },
+  {
+    "title": "Mechanistic interpretability of large language models with applications to the financial services industry",
+    "year": 2024,
+    "authors": "Ashkan Golgoon, Khashayar Filom, Arjun Ravi Kannan",
+    "url": "https://api.semanticscholar.org/CorpusId:271218140",
+    "relevance": 3,
+    "abstract": "Large Language Models exhibit remarkable capabilities across a broad spectrum of applications. Nevertheless, due to their intrinsic complexity, these models present substantial challenges in interpreting their internal decision-making processes. This lack of transparency poses critical challenges when it comes to their adaptation by financial institutions, where concerns and accountability regarding bias, fairness, and reliability are of paramount importance. Mechanistic interpretability aims at reverse engineering complex AI models such as transformers. In this paper, we are pioneering the use of mechanistic interpretability to shed some light on the inner workings of large language models for use in financial services applications. We offer several examples of how algorithmic tasks can be designed for compliance monitoring purposes. In particular, we investigate GPT-2 Small\u2019s attention pattern when prompted to identify potential violation of Fair Lending laws. Using direct logit attribution, we study the contributions of each layer and its corresponding attention heads to the logit difference in the residual stream. Finally, we design clean and corrupted prompts and use activation patching as a causal intervention method to localize our task completion components further. We observe that the (positive) heads 10.2 (head 2, layer 10), 10.7, and 11.3, as well as the (negative) heads 9.6 and 10.6 play a significant role in the task completion.",
+    "citations": 6
+  },
+  {
+    "title": "Mechanistic Interpretability of GPT-like Models on Summarization Tasks",
+    "year": 2025,
+    "authors": "A. Mishra",
+    "url": "https://api.semanticscholar.org/CorpusId:278887023",
+    "relevance": 3,
+    "abstract": "Mechanistic interpretability research seeks to reveal the inner workings of large language models, yet most work focuses on classification or generative tasks rather than summarization. This paper presents an interpretability framework for analyzing how GPT-like models adapt to summarization tasks. We conduct differential analysis between pre-trained and fine-tuned models, quantifying changes in attention patterns and internal activations. By identifying specific layers and attention heads that undergo significant transformation, we locate the\"summarization circuit\"within the model architecture. Our findings reveal that middle layers (particularly 2, 3, and 5) exhibit the most dramatic changes, with 62% of attention heads showing decreased entropy, indicating a shift toward focused information selection. We demonstrate that targeted LoRA adaptation of these identified circuits achieves significant performance improvement over standard LoRA fine-tuning while requiring fewer training epochs. This work bridges the gap between black-box evaluation and mechanistic understanding, providing insights into how neural networks perform information selection and compression during summarization.",
+    "citations": 0
+  },
+  {
+    "title": "Sparse Attention Decomposition Applied to Circuit Tracing",
+    "year": 2024,
+    "authors": "Gabriel Franco, Mark Crovella",
+    "url": "https://www.semanticscholar.org/paper/215923436c61a591d3a4cd47cbede1e1697abc79",
+    "relevance": 3,
+    "abstract": "Many papers have shown that attention heads work in conjunction with each other to perform complex tasks. It's frequently assumed that communication between attention heads is via the addition of specific features to token residuals. In this work we seek to isolate and identify the features used to effect communication and coordination among attention heads in GPT-2 small. Our key leverage on the problem is to show that these features are very often sparsely coded in the singular vectors of attention head matrices. We characterize the dimensionality and occurrence of these signals across the attention heads in GPT-2 small when used for the Indirect Object Identification (IOI) task. The sparse encoding of signals, as provided by attention head singular vectors, allows for efficient separation of signals from the residual background and straightforward identification of communication paths between attention heads. We explore the effectiveness of this approach by tracing portions of the circuits used in the IOI task. Our traces reveal considerable detail not present in previous studies, shedding light on the nature of redundant paths present in GPT-2. And our traces go beyond previous work by identifying features used to communicate between attention heads when performing IOI.",
+    "citations": 3
+  },
+  {
+    "title": "Dictionary Learning Improves Patch-Free Circuit Discovery in Mechanistic Interpretability: A Case Study on Othello-GPT",
+    "year": 2024,
+    "authors": "Zhengfu He, Xuyang Ge, Qiong Tang, Tianxiang Sun, Qinyuan Cheng, Xipeng Qiu",
+    "url": "https://www.semanticscholar.org/paper/1301ed763095097ff424c668e16a265b3ae2f231",
+    "relevance": 3,
+    "abstract": "Sparse dictionary learning has been a rapidly growing technique in mechanistic interpretability to attack superposition and extract more human-understandable features from model activations. We ask a further question based on the extracted more monosemantic features: How do we recognize circuits connecting the enormous amount of dictionary features? We propose a circuit discovery framework alternative to activation patching. Our framework suffers less from out-of-distribution and proves to be more efficient in terms of asymptotic complexity. The basic unit in our framework is dictionary features decomposed from all modules writing to the residual stream, including embedding, attention output and MLP output. Starting from any logit, dictionary feature or attention score, we manage to trace down to lower-level dictionary features of all tokens and compute their contribution to these more interpretable and local model behaviors. We dig in a small transformer trained on a synthetic task named Othello and find a number of human-understandable fine-grained circuits inside of it.",
+    "citations": 25
+  },
+  {
+    "title": "In-Context Linear Regression Demystified: Training Dynamics and Mechanistic Interpretability of Multi-Head Softmax Attention",
+    "year": 2025,
+    "authors": "Jianliang He, Xintian Pan, Siyu Chen, Zhuoran Yang",
+    "url": "https://www.semanticscholar.org/paper/180d89a6fe2ce8521935c6c00cca8c59a35345da",
+    "relevance": 3,
+    "abstract": "We study how multi-head softmax attention models are trained to perform in-context learning on linear data. Through extensive empirical experiments and rigorous theoretical analysis, we demystify the emergence of elegant attention patterns: a diagonal and homogeneous pattern in the key-query (KQ) weights, and a last-entry-only and zero-sum pattern in the output-value (OV) weights. Remarkably, these patterns consistently appear from gradient-based training starting from random initialization. Our analysis reveals that such emergent structures enable multi-head attention to approximately implement a debiased gradient descent predictor -- one that outperforms single-head attention and nearly achieves Bayesian optimality up to proportional factor. Furthermore, compared to linear transformers, the softmax attention readily generalizes to sequences longer than those seen during training. We also extend our study to scenarios with anisotropic covariates and multi-task linear regression. In the former, multi-head attention learns to implement a form of pre-conditioned gradient descent. In the latter, we uncover an intriguing regime where the interplay between head number and task number triggers a superposition phenomenon that efficiently resolves multi-task in-context learning. Our results reveal that in-context learning ability emerges from the trained transformer as an aggregated effect of its architecture and the underlying data distribution, paving the way for deeper understanding and broader applications of in-context learning.",
+    "citations": 5
+  },
+  {
+    "title": "Discovering Transformer Circuits via a Hybrid Attribution and Pruning Framework",
+    "year": 2025,
+    "authors": "Hao Gu, V. Nair, Amrith Kumar, J. Sharma, Ryan Lagasse",
+    "url": "https://www.semanticscholar.org/paper/ba4f571c2c40b0f387abebdce2322b71304945b9",
+    "relevance": 3,
+    "abstract": "Interpreting language models often involves circuit analysis, which aims to identify sparse subnetworks, or circuits, that accomplish specific tasks. Existing circuit discovery algorithms face a fundamental trade-off: attribution patching is fast but unfaithful to the full model, while edge pruning is faithful but computationally expensive. This research proposes a hybrid attribution and pruning (HAP) framework that uses attribution patching to identify a high-potential subgraph, then applies edge pruning to extract a faithful circuit from it. We show that HAP is 46\\% faster than baseline algorithms without sacrificing circuit faithfulness. Furthermore, we present a case study on the Indirect Object Identification task, showing that our method preserves cooperative circuit components (e.g. S-inhibition heads) that attribution patching methods prune at high sparsity. Our results show that HAP could be an effective approach for improving the scalability of mechanistic interpretability research to larger models. Our code is available at https://anonymous.4open.science/r/HAP-circuit-discovery.",
+    "citations": 2
+  },
+  {
+    "title": "Mechanistic Interpretability for Transformer-based Time Series Classification",
+    "year": 2025,
+    "authors": "Matiss Kalnare, Sofoklis Kitharidis, Thomas B\u00e4ck, N. V. Stein",
+    "url": "https://www.semanticscholar.org/paper/aabdf7c925ff231cea462c2866f288ce2649ea2d",
+    "relevance": 3,
+    "abstract": "Transformer-based models have become state-of-the-art tools in various machine learning tasks, including time series classification, yet their complexity makes understanding their internal decision-making challenging. Existing explainability methods often focus on input-output attributions, leaving the internal mechanisms largely opaque. This paper addresses this gap by adapting various Mechanistic Interpretability techniques; activation patching, attention saliency, and sparse autoencoders, from NLP to transformer architectures designed explicitly for time series classification. We systematically probe the internal causal roles of individual attention heads and timesteps, revealing causal structures within these models. Through experimentation on a benchmark time series dataset, we construct causal graphs illustrating how information propagates internally, highlighting key attention heads and temporal positions driving correct classifications. Additionally, we demonstrate the potential of sparse autoencoders for uncovering interpretable latent features. Our findings provide both methodological contributions to transformer interpretability and novel insights into the functional mechanics underlying transformer performance in time series classification tasks.",
+    "citations": 0
+  },
+  {
+    "title": "Cracking the Circuits: Mechanistic Interpretability in Large Language Models",
+    "year": 2025,
+    "authors": "Dost Muhammad, Muhammad Salman, Mushtaq Ali, Malika Bendechache",
+    "url": "https://www.semanticscholar.org/paper/ca269e74084894dd4cc60134b50cebf52647849f",
+    "relevance": 3,
+    "abstract": "Mechanistic interpretability aims to uncover how internal components of large language models (LLMs) contribute to their overall behaviour. While previous research has revealed interpretable circuits in small-scale transformers, the field still lacks a systematic and mathematically grounded framework for understanding, validating, and comparing interpretability techniques. In this paper, we introduce a unified formalism and taxonomy for mechanistic interpretability, defining core concepts such as modular circuits, representational superposition, and polysemantic neurons. We categorise interpretability methods based on granularity, causal influence, robustness to perturbation, and transferability across tasks. To demonstrate the utility of this framework, we analyse the GPT2-small model on the Indirect Object Identification (IOI) task using TransformerLens. Our findings reveal that attention heads 7.1 and 8.6 play a consistent and causal role in performing the name-mover function. Activation patching experiments show that restoring these components recovers over 90 % of performance lost due to input corruption, while ablating them results in a 27.3 % accuracy drop. These results provide empirical support for the existence of sparse, interpretable circuits that underpin model reasoning. Visualisations of patching curves and attention patterns further substantiate this behaviour. This study offers a principled methodology for mechanistic analysis in language models, bridging theoretical insights with empirical validation. The proposed framework supports the development of transparent, trustworthy, and controllable AI systems, with potential for extension to larger-scale models and safety-critical applications.",
+    "citations": 0
+  },
+  {
+    "title": "Stream: Scaling up Mechanistic Interpretability to Long Context in LLMs via Sparse Attention",
+    "year": 2025,
+    "authors": "J. Rosser, Jos\u00e9 Luis, Redondo Garc\u00eda, Gustavo Penha, Spotify Netherlands, Hugues Bouchard",
+    "url": "https://www.semanticscholar.org/paper/e1e2fceba9089e083a391212e7c60574188e12c8",
+    "relevance": 3,
+    "abstract": "As Large Language Models (LLMs) scale to million-token contexts, traditional Mechanistic Interpretability techniques for analyzing attention scale quadratically with context length, demanding terabytes of memory beyond 100,000 tokens. We introduce Sparse Tracing, a novel technique that leverages dynamic sparse attention to efficiently analyze long context attention patterns. We present Stream, a compilable hierarchical pruning algorithm that estimates per-head sparse attention masks in near-linear time $O(T \\log T)$ and linear space $O(T)$, enabling one-pass interpretability at scale. Stream performs a binary-search-style refinement to retain only the top-$k$ key blocks per query while preserving the model's next-token behavior. We apply Stream to long chain-of-thought reasoning traces and identify thought anchors while pruning 97-99\\% of token interactions. On the RULER benchmark, Stream preserves critical retrieval paths while discarding 90-96\\% of interactions and exposes layer-wise routes from the needle to output. Our method offers a practical drop-in tool for analyzing attention patterns and tracing information flow without terabytes of caches. By making long context interpretability feasible on consumer GPUs, Sparse Tracing helps democratize chain-of-thought monitoring. Code is available at https://anonymous.4open.science/r/stream-03B8/.",
+    "citations": 0
+  },
+  {
+    "title": "From Indirect Object Identification to Syllogisms: Exploring Binary Mechanisms in Transformer Circuits",
+    "year": 2025,
+    "authors": "Karim Saraipour",
+    "url": "https://www.semanticscholar.org/paper/fc5440772f254c76924b990a220d6f9fe3e19898",
+    "relevance": 3,
+    "abstract": "Transformer-based language models (LMs) can perform a wide range of tasks, and mechanistic interpretability (MI) aims to reverse engineer the components responsible for task completion to understand their behavior. Previous MI research has focused on linguistic tasks such as Indirect Object Identification (IOI). In this paper, we investigate the ability of GPT-2 small to handle binary truth values by analyzing its behavior with syllogistic prompts, e.g.,\"Statement A is true. Statement B matches statement A. Statement B is\", which requires more complex logical reasoning compared to IOI. Through our analysis of several syllogism tasks of varying difficulty, we identify multiple circuits that mechanistically explain GPT-2's logical-reasoning capabilities and uncover binary mechanisms that facilitate task completion, including the ability to produce a negated token not present in the input prompt through negative heads. Our evaluation using a faithfulness metric shows that a circuit comprising five attention heads achieves over 90% of the original model's performance. By relating our findings to IOI analysis, we provide new insights into the roles of specific attention heads and MLPs in LMs. These insights contribute to a broader understanding of model reasoning and support future research in mechanistic interpretability.",
+    "citations": 0
+  }
+]

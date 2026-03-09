@@ -1,0 +1,56 @@
+\section{Discussion}
+\label{sec:discussion}
+
+\para{Attention geometry as a failure signal.}
+Our results provide the first empirical evidence that geometric properties of attention circuits contain predictive signal about prompt-level performance.
+The significant correlations---particularly the Frobenius norm ($\spearman = +0.474$) and cross-layer variance ($\spearman = -0.472$)---support the hypothesis that geometric instability in attention patterns flags prompt failures.
+These findings are consistent with prior work linking attention variance to Ricci curvature and model robustness \citep{park2024geometry}, and with the finding that mid-layer attention heads are both unstable and functionally important \citep{bali2026quantifying}.
+
+\para{Why logit confidence fails.}
+The complete failure of the logit-confidence baseline (0\% accuracy) is noteworthy.
+Maximum softmax probability, a standard uncertainty measure \citep{hendrycks2017baseline}, cannot distinguish prompt formats that produce 71\% accuracy from those at chance level.
+This suggests that the model is equally ``confident'' in its predictions regardless of whether the prompt format enables correct classification.
+The failure of output-based heuristics motivates the use of internal geometric features, which capture structural properties of the computation rather than just the output distribution.
+
+\para{Interpretability of geometric features.}
+The correlations we observe have intuitive interpretations.
+Higher Frobenius norm indicates stronger attention signals, suggesting the model is more effectively attending to task-relevant tokens.
+Lower cross-layer variance indicates consistent attention behavior across the network, suggesting stable information flow.
+Higher late-layer entropy suggests richer contextual integration in the final layers, where task-relevant representations are typically formed \citep{wang2022interpretability}.
+These interpretations connect attention geometry to the mechanistic understanding of how prompts enable (or hinder) task performance.
+
+\para{Practical implications.}
+Geometric features require only a single forward pass to compute, making them a cheap complement to expensive evaluation-based prompt selection.
+A practitioner could extract attention patterns for a small set of representative inputs, compute geometric features, and screen out formats with high cross-layer variance or low Frobenius norm before committing to full evaluation.
+However, the current 60\% classification accuracy is insufficient for production use.
+
+\subsection{Limitations}
+\label{sec:limitations}
+
+\para{Small sample size.}
+The primary limitation is the small number of prompt formats ($n = 20$).
+With only 20 data points, classifier generalization is poor and correlation confidence intervals are wide (several cross zero).
+A production study using the \textsc{FormatSpread} grammar of \citet{sclar2023quantifying} to generate 100+ formats would provide much stronger statistical power.
+
+\para{Single model.}
+We evaluate only \gptsmall, the most studied model for mechanistic interpretability.
+Its 12-layer, 12-head architecture may produce simpler attention geometry than larger models.
+Whether the same geometric features are predictive in models like Llama-3 or GPT-4 remains an open question.
+
+\para{Single task.}
+\ssttwo is a relatively simple binary classification task.
+Harder tasks such as multi-hop question answering or mathematical reasoning may exhibit different geometric signatures of failure.
+Multi-task evaluation is needed to establish generality.
+
+\para{Feature aggregation.}
+Averaging geometric features across examples and heads discards fine-grained information.
+Per-example prediction---predicting whether a specific (prompt, input) pair will fail---would be more powerful but requires a different experimental design with many more data points.
+
+\para{No causal validation.}
+Our correlations do not establish that geometry \emph{causes} failure.
+Interventional experiments (\eg steering attention to modify geometric properties and measuring the effect on accuracy) would be needed to establish a causal link.
+
+\para{Label word confound.}
+Some accuracy variation may reflect label word frequency in \gptsmall's training data rather than prompt format per se.
+Formats using ``positive/negative'' consistently outperform those using ``good/bad'' or ``great/terrible.''
+Future work should disentangle label word effects from format effects.

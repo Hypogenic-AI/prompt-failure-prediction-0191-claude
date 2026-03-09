@@ -1,0 +1,166 @@
+{
+  "core_correlations": {
+    "mean_frob_norm": {
+      "rho": 0.4737862082885849,
+      "p_value": 0.03483541257806106
+    },
+    "variance_layer_std": {
+      "rho": -0.47227733501378055,
+      "p_value": 0.03549942354084872
+    },
+    "mean_attn_variance": {
+      "rho": -0.4602063488153452,
+      "p_value": 0.041172871037920764
+    },
+    "std_effective_rank": {
+      "rho": 0.45417085571612753,
+      "p_value": 0.04426042161059568
+    },
+    "late_layer_entropy": {
+      "rho": 0.4481353626169099,
+      "p_value": 0.047523368371821334
+    },
+    "mean_sv_entropy": {
+      "rho": 0.4458720527047033,
+      "p_value": 0.048793448428341574
+    },
+    "mid_layer_variance": {
+      "rho": -0.4405909962428879,
+      "p_value": 0.051858076993852
+    },
+    "max_attn_variance": {
+      "rho": -0.43832768633068125,
+      "p_value": 0.05321560269223152
+    },
+    "mean_effective_rank": {
+      "rho": 0.4360643764184746,
+      "p_value": 0.054600064818651275
+    },
+    "mean_entropy": {
+      "rho": 0.43304662986886583,
+      "p_value": 0.056488475043230346
+    },
+    "early_layer_entropy": {
+      "rho": 0.42022120703302834,
+      "p_value": 0.06507265273911568
+    },
+    "std_attn_variance": {
+      "rho": -0.418712333758224,
+      "p_value": 0.06614372903126337
+    },
+    "mean_condition_number": {
+      "rho": 0.41644902384601734,
+      "p_value": 0.06777514065098308
+    },
+    "std_frob_norm": {
+      "rho": 0.4156945872086151,
+      "p_value": 0.06832560406955443
+    },
+    "mean_concentration": {
+      "rho": -0.4089046574719953,
+      "p_value": 0.07343189256157803
+    },
+    "mean_top3_sv_ratio": {
+      "rho": -0.4013602910979732,
+      "p_value": 0.07943401768918079
+    },
+    "max_entropy": {
+      "rho": 0.39381592472395116,
+      "p_value": 0.08579294774469344
+    },
+    "mean_inter_head_sim": {
+      "rho": -0.38853486826213574,
+      "p_value": 0.0904625037802946
+    },
+    "mid_layer_entropy": {
+      "rho": 0.3832538118003203,
+      "p_value": 0.0953161472435775
+    },
+    "std_entropy": {
+      "rho": 0.36665620577747177,
+      "p_value": 0.11180957128483388
+    },
+    "std_inter_head_sim": {
+      "rho": 0.2957391618616645,
+      "p_value": 0.20552221278561578
+    },
+    "std_concentration": {
+      "rho": 0.2444374705183145,
+      "p_value": 0.2989757740344042
+    },
+    "entropy_layer_std": {
+      "rho": 0.23915641405649907,
+      "p_value": 0.3098639760294689
+    }
+  },
+  "bootstrap_ci": {
+    "mean_frob_norm": {
+      "rho": 0.4737862082885849,
+      "ci_low": -0.0038206312237071605,
+      "ci_high": 0.8078950289796114,
+      "p_value": 0.03483541257806106
+    },
+    "variance_layer_std": {
+      "rho": -0.47227733501378055,
+      "ci_low": -0.8145306373660012,
+      "ci_high": -0.013728665048150358,
+      "p_value": 0.03549942354084872
+    },
+    "mean_attn_variance": {
+      "rho": -0.4602063488153452,
+      "ci_low": -0.7927124897372233,
+      "ci_high": 0.003835123068014775,
+      "p_value": 0.041172871037920764
+    },
+    "std_effective_rank": {
+      "rho": 0.45417085571612753,
+      "ci_low": -0.0236192150729543,
+      "ci_high": 0.7907698077343807,
+      "p_value": 0.04426042161059568
+    },
+    "late_layer_entropy": {
+      "rho": 0.4481353626169099,
+      "ci_low": -0.008445928025399358,
+      "ci_high": 0.78643630734056,
+      "p_value": 0.047523368371821334
+    }
+  },
+  "threshold_classifiers": {
+    "mean_frob_norm": {
+      "accuracy": 0.4,
+      "precision": 0.4,
+      "recall": 0.4,
+      "f1": 0.4
+    },
+    "variance_layer_std": {
+      "accuracy": 0.4,
+      "precision": 0.4,
+      "recall": 0.4,
+      "f1": 0.4
+    },
+    "mean_attn_variance": {
+      "accuracy": 0.45,
+      "precision": 0.4444444444444444,
+      "recall": 0.4,
+      "f1": 0.42105263157894735
+    },
+    "std_effective_rank": {
+      "accuracy": 0.4,
+      "precision": 0.4,
+      "recall": 0.4,
+      "f1": 0.4
+    },
+    "late_layer_entropy": {
+      "accuracy": 0.4,
+      "precision": 0.4,
+      "recall": 0.4,
+      "f1": 0.4
+    }
+  },
+  "permutation_test": {
+    "feature": "mean_frob_norm",
+    "observed_rho": 0.4737862082885849,
+    "permutation_p": 0.0362,
+    "n_permutations": 5000
+  }
+}

@@ -1,0 +1,8 @@
+PDF: papers/mizrahi2024_state_of_prompt_fragility.pdf
+Total pages: 9
+Pages per chunk: 3
+
+Chunks:
+  mizrahi2024_state_of_prompt_fragility_chunk_001.pdf: pages 1-3
+  mizrahi2024_state_of_prompt_fragility_chunk_002.pdf: pages 4-6
+  mizrahi2024_state_of_prompt_fragility_chunk_003.pdf: pages 7-9

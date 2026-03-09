@@ -1,0 +1,34 @@
+{
+  "created_at": "2026-03-09T22:58:09.725362",
+  "stages": {
+    "resource_finder": {
+      "status": "completed",
+      "started_at": "2026-03-09T22:58:09.725714",
+      "completed_at": "2026-03-09T23:21:28.759649",
+      "success": true,
+      "outputs": {
+        "literature_review": "/workspaces/prompt-failure-prediction-0191-claude/literature_review.md",
+        "resources_catalog": "/workspaces/prompt-failure-prediction-0191-claude/resources.md",
+        "papers_dir": "/workspaces/prompt-failure-prediction-0191-claude/papers",
+        "datasets_dir": "/workspaces/prompt-failure-prediction-0191-claude/datasets",
+        "code_dir": "/workspaces/prompt-failure-prediction-0191-claude/code"
+      }
+    },
+    "experiment_runner": {
+      "status": "completed",
+      "started_at": "2026-03-09T23:21:28.760008",
+      "completed_at": "2026-03-09T23:38:12.429082",
+      "success": true,
+      "outputs": {
+        "success": true,
+        "return_code": 0,
+        "elapsed_time": 1003.6543986797333,
+        "log_file": "/workspaces/prompt-failure-prediction-0191-claude/logs/execution_claude.log",
+        "transcript_file": "/workspaces/prompt-failure-prediction-0191-claude/logs/execution_claude_transcript.jsonl"
+      }
+    }
+  },
+  "current_stage": null,
+  "completed": true,
+  "completed_at": "2026-03-09T23:38:12.430009"
+}

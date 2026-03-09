@@ -1,0 +1,82 @@
+\section{Methodology}
+\label{sec:method}
+
+We describe our approach for extracting geometric features from attention circuits and testing whether they predict prompt-level performance.
+
+\subsection{Task and Data}
+\label{sec:data}
+
+We use \ssttwo (Stanford Sentiment Treebank, binary) from the GLUE benchmark for sentiment classification (positive/negative).
+We sample 200 examples (100 positive, 100 negative) from the validation set with balanced random sampling (seed=42).
+We choose \ssttwo because it is the most commonly used dataset for prompt sensitivity studies \citep{sclar2023quantifying, mizrahi2024state} and provides a clean binary classification signal.
+Texts are truncated to 200 characters to ensure manageable sequence lengths within \gptsmall's 512-token context window.
+
+\subsection{Prompt Format Variants}
+\label{sec:prompts}
+
+We create 20 systematically varied prompt formats, inspired by the format perturbation methodology of \citet{sclar2023quantifying}.
+Formats vary along several axes: instruction phrasing (\eg ``Classify the sentiment'' vs.\ ``Is the following review positive or negative?''), separator tokens (newlines, pipes, tabs, colons), structural markup (XML tags, JSON-like, parenthetical), label words (positive/negative, good/bad, great/terrible), and instruction casing (standard, all-caps).
+\tabref{tab:formats} in \secref{sec:results} provides the complete list with accuracy values.
+This systematic variation isolates formatting effects while preserving semantic content.
+
+\subsection{Performance Measurement}
+\label{sec:performance}
+
+We run \gptsmall (12 layers, 12 heads, 768-dimensional hidden states) on all 200 examples across all 20 formats.
+For each example, we compare the logit scores for the positive and negative label tokens and assign the predicted label as the one with the higher logit.
+Accuracy per format is the fraction of correct predictions across all 200 examples.
+We define a binary failure label using the median accuracy (0.603) as the threshold: formats below the median are labeled as failures, and those above as stable.
+This yields a balanced 10/10 split.
+
+\subsection{Geometric Feature Extraction}
+\label{sec:features}
+
+We use TransformerLens \citep{nanda2022transformerlens} to extract attention patterns from all 12 layers $\times$ 12 heads of \gptsmall.
+For computational tractability, we subsample 50 examples from our 200-example set for cache extraction.
+For each prompt format and example, we obtain the full attention matrix $\mA^{(l,h)} \in \sR^{T \times T}$ for each layer $l \in \{1,\ldots,12\}$ and head $h \in \{1,\ldots,12\}$, where $T$ is the sequence length.
+
+We compute 23 geometric features organized into six categories:
+
+\para{Entropy features (7).}
+We compute the Shannon entropy of each attention head's distribution: $H(\mA^{(l,h)}) = -\sum_{i,j} a_{ij} \log a_{ij}$.
+We aggregate across heads and examples to obtain the mean, standard deviation, and maximum entropy per format.
+We also compute layer-group entropy (early: layers 1--4, mid: layers 5--8, late: layers 9--12) and the standard deviation of entropy across layers.
+
+\para{Singular value features (4).}
+We compute the SVD of each attention matrix and extract: (i) the effective rank $r_{\text{eff}} = \exp(H(\hat{\sigma}))$, where $\hat{\sigma}$ is the normalized singular value distribution; (ii) the condition number $\kappa = \sigma_1/\sigma_{\min}$; (iii) the ratio of the top-3 singular values to the total; and (iv) the entropy of the singular value spectrum.
+These features capture the rank structure and concentration of attention patterns \citep{bussman2025beyond}.
+
+\para{Variance features (5).}
+We compute the variance of attention weights within each head, then aggregate to obtain the mean, standard deviation, maximum, and mid-layer variance across the format.
+The standard deviation of variance across layers captures cross-layer consistency.
+High variance indicates complex attention landscapes that may be less robust \citep{park2024geometry}.
+
+\para{Concentration features (2).}
+We measure how peaked each attention distribution is using the maximum attention weight per position, then compute the mean and standard deviation across heads.
+
+\para{Inter-head similarity (2).}
+We compute pairwise cosine similarity between attention patterns of different heads within each layer, yielding the mean and standard deviation.
+This captures head redundancy versus diversity.
+
+\para{Frobenius norm features (2).}
+We compute the Frobenius norm $\|\mA^{(l,h)}\|_F$ of each attention matrix, then aggregate to obtain the mean and standard deviation across heads and layers.
+The Frobenius norm measures overall attention magnitude, related to the query-weight norm that \citet{bali2026quantifying} found to correlate with head stability.
+
+All features are computed per-head, per-layer, then averaged across the 50 subsampled examples to obtain a single feature vector $\vf \in \sR^{23}$ per prompt format.
+
+\subsection{Statistical Analysis}
+\label{sec:analysis}
+
+We compute Spearman rank correlations between each geometric feature and prompt accuracy.
+We use a permutation test (5{,}000 permutations) to assess whether the top correlation is significant beyond what would be expected from testing 23 features.
+We also compute bootstrap 95\% confidence intervals (10{,}000 resamples) for each correlation.
+
+\subsection{Failure Classification}
+\label{sec:classifier}
+
+We train logistic regression classifiers to predict the binary failure label from geometric features.
+Given the small sample size ($n = 20$), we use leave-one-out (LOO) cross-validation.
+We evaluate classifiers using the top-$k$ features (for $k \in \{2, 3, 5\}$) selected by absolute Spearman correlation on the full dataset.
+
+\para{Baselines.}
+We compare against two baselines: (i) \emph{random prediction}, which assigns labels uniformly at random (expected 50\% accuracy); and (ii) \emph{logit confidence}, which uses the mean maximum softmax probability across examples as a proxy for prompt quality \citep{hendrycks2017baseline}.

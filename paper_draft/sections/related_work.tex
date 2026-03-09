@@ -1,0 +1,33 @@
+\section{Related Work}
+\label{sec:related}
+
+\para{Prompt sensitivity and robustness.}
+\citet{sclar2023quantifying} introduced \textsc{FormatSpread}, demonstrating that meaning-preserving prompt format changes cause up to 76 accuracy point swings across 53 tasks. Their formal grammar over prompt formats (separators, spacing, casing) reveals a highly non-monotonic performance landscape.
+\citet{mizrahi2024state} conducted a large-scale study (6.5M instances, 20 models) confirming that prompt paraphrasing effects are severe: 10 of 25 tasks show weak ranking agreement across prompts, and edit distance does not predict degradation.
+\citet{zhu2023promptbench} proposed a benchmark covering character-, word-, sentence-, and semantic-level perturbations.
+These studies thoroughly document prompt fragility but do not provide mechanistic explanations or predictive tools. Our work complements this line of research by connecting internal model geometry to prompt-level failure prediction.
+
+\para{Attention geometry and model robustness.}
+\citet{park2024geometry} treat attention maps as weighted graphs and compute Ollivier-Ricci curvature (ORC), establishing that higher positive curvature correlates with more robust transformers.
+They show that attention variance serves as a computationally efficient proxy for ORC, and that ORC distributions shift toward positive values through the forward pass.
+However, their analysis operates at the model level during training, not at the prompt level during inference.
+\citet{piotrowski2025constrained} show that transformers implement constrained Bayesian belief updating, with internal representations forming fractal structures in the belief simplex.
+Their finding that architectural constraints warp optimal inference geometry provides theoretical grounding for why attention geometry should vary with prompt format.
+We extend these model-level geometric insights to prompt-level failure prediction at inference time.
+
+\para{Attention head analysis and circuit discovery.}
+\citet{wang2022interpretability} identified the complete circuit for indirect object identification (IOI) in \gptsmall, including name movers, induction heads, and S-inhibition heads.
+\citet{olsson2022context} identified induction heads as a key mechanism for in-context learning.
+\citet{conmy2023towards} automated circuit discovery with ACDC, systematically identifying task-relevant edges in the computational graph.
+\citet{bussman2025beyond} introduced SVD-based circuit analysis, decomposing attention heads into singular vector components.
+These works establish that attention heads form interpretable, task-specific circuits, motivating our extraction of geometric features from these circuits.
+
+\para{Circuit geometry and stability.}
+\citet{suarez2026circuit} propose that circuit discovery and activation steering are dual operations on the same geometric structure, finding that negative-valence steering is fragile---directly demonstrating geometric regions of instability.
+\citet{bali2026quantifying} measure attention head stability across random seeds, finding a U-shaped stability curve where mid-layer heads are least stable yet most functionally important.
+They also show that stability degrades with prompt length and that query-weight Frobenius norm correlates negatively with stability.
+Our work is closest to these studies in spirit, but we focus on a different question: whether geometric features predict \emph{prompt-level} performance rather than \emph{model-level} stability.
+
+\para{Representation geometry.}
+\citet{park2024linear} analyze when linear representations emerge in LLMs, while \citet{engels2024not} show that some features are represented as multi-dimensional, non-linear structures.
+These findings suggest that attention circuit geometry may have complex manifold structure relevant to prompt sensitivity, supporting our use of multiple geometric feature types (entropy, singular values, variance) rather than a single geometric measure.

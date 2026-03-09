@@ -1,0 +1,35 @@
+\section{Introduction}
+\label{sec:intro}
+
+Prompt engineering is fragile.
+A single added space, a swapped separator token, or a rephrased instruction can swing a language model's accuracy by 76 percentage points on the same task \citep{sclar2023quantifying}.
+This sensitivity is not eliminated by scaling, few-shot examples, or instruction tuning \citep{mizrahi2024state}, and the performance landscape across prompt formats is highly non-monotonic---format rankings frequently reverse between models \citep{sclar2023quantifying}.
+For practitioners deploying language models in production, this fragility poses a serious reliability challenge: without exhaustive evaluation, there is no way to know whether a chosen prompt will fail.
+
+Recent work in mechanistic interpretability has revealed rich geometric structure inside transformer models.
+Attention patterns form weighted graphs whose Ricci curvature correlates with model robustness \citep{park2024geometry}.
+Attention heads exhibit a U-shaped stability curve across layers, with mid-layer heads being paradoxically the least stable yet most functionally important \citep{bali2026quantifying}.
+Internal representations follow constrained belief-update geometry shaped by architectural constraints \citep{piotrowski2025constrained}.
+Yet none of this geometric understanding has been connected to the practical problem of predicting which prompts will fail.
+
+On the prompt engineering side, prior work has thoroughly documented the problem \citep{sclar2023quantifying, mizrahi2024state, zhu2023promptbench} but offers no mechanistic explanation for \emph{why} certain formats fail.
+Surface-level features like edit distance do not predict degradation magnitude \citep{mizrahi2024state}, strongly motivating the search for deeper structural features.
+A predictive geometric signature---computable from a single forward pass---would enable pre-deployment failure screening without expensive evaluation across many inputs.
+
+We bridge this gap by extracting geometric features from attention circuits and testing whether they predict prompt-level performance.
+We run \gptsmall on 200 \ssttwo examples across 20 systematically varied prompt formats, extract 23 geometric features from all 144 attention heads, and correlate these features with prompt accuracy.
+Our main finding is that six geometric features significantly correlate with prompt performance ($p < 0.05$, permutation-confirmed), with Frobenius norm ($\spearman = +0.474$) and cross-layer variance ($\spearman = -0.472$) as the strongest predictors.
+A classifier using these features achieves 60\% leave-one-out accuracy, outperforming both random prediction (50\%) and a logit-confidence baseline that completely fails (0\%).
+
+Our contributions are as follows:
+\begin{itemize}[leftmargin=*,itemsep=0pt,topsep=0pt]
+    \item We propose using attention circuit geometry---entropy, singular value spectra, Frobenius norms, and cross-layer variance---as predictive features for prompt failure detection, requiring only a single forward pass.
+    \item We demonstrate that six geometric features significantly correlate with prompt performance on \ssttwo ($p < 0.05$), with interpretable directions: higher attention magnitude predicts success, while cross-layer inconsistency predicts failure.
+    \item We show that a logit-confidence baseline completely fails at distinguishing prompt quality, motivating geometric approaches over output-based heuristics.
+\end{itemize}
+
+The remainder of this paper is organized as follows.
+\Secref{sec:related} reviews related work on prompt sensitivity, attention geometry, and mechanistic interpretability.
+\Secref{sec:method} describes our methodology for extracting and analyzing geometric features.
+\Secref{sec:results} presents the experimental results.
+\Secref{sec:discussion} discusses implications and limitations, and \secref{sec:conclusion} concludes.
